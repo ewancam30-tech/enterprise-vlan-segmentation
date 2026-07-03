@@ -1,0 +1,153 @@
+
+Building configuration...
+
+Current configuration : 2397 bytes
+!
+version 15.0
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname SW1
+!
+enable secret 5 $1$mERr$hx5rVt7rPNoS4wqbXKX7m0
+!
+!
+!
+no ip domain-lookup
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+interface FastEthernet0/1
+ description Management PCs
+ switchport access vlan 10
+ switchport mode access
+!
+interface FastEthernet0/2
+ description Management PCs
+ switchport access vlan 10
+ switchport mode access
+!
+interface FastEthernet0/3
+ description Sales PCs
+ switchport access vlan 20
+ switchport mode access
+!
+interface FastEthernet0/4
+ description Sales PCs
+ switchport access vlan 20
+ switchport mode access
+!
+interface FastEthernet0/5
+ description UNUSED PORT
+!
+interface FastEthernet0/6
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/7
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/8
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/9
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/10
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/11
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/12
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/13
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/14
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/15
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/16
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/17
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/18
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/19
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/20
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/21
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/22
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/23
+ description UNUSED PORT
+ shutdown
+!
+interface FastEthernet0/24
+ description Trunk Link to SW2
+ switchport trunk allowed vlan 10,20,30
+ switchport mode trunk
+!
+interface GigabitEthernet0/1
+!
+interface GigabitEthernet0/2
+ shutdown
+!
+interface Vlan1
+ description Management Interface
+ ip address 192.168.10.2 255.255.255.0
+!
+ip default-gateway 192.168.10.1
+!
+banner motd ^CUnauthorized access is prohibited.^C
+!
+!
+!
+line con 0
+ password cisco
+ login
+!
+line vty 0 4
+ password cisco
+ login
+line vty 5 15
+ password cisco
+ login
+!
+!
+!
+!
+end
